@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { BookContext } from '../../context/BookContext';
 
 const Books = () => {
+    const {storedBook,wishList} = useContext(BookContext);
+      console.log('bookContext',  storedBook,wishList);
     return (
-        <div>
-            book
+        <div className='container mx-auto'>
+         Read list:{storedBook.length}
+         <br />
+         Wishlist:{wishList.length}
         </div>
     );
 };
